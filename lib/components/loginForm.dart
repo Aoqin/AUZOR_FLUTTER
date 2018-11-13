@@ -11,19 +11,15 @@ class LoginForm extends StatelessWidget {
       new TextFormFieldArea(),
       new Container(
           decoration: BoxDecoration(
-            border: Border.all(width:1.0),
+            border: Border.all(width: 1.0),
             borderRadius: BorderRadius.all(Radius.circular(25.0)),
-            
           ),
           width: 400.0,
-          child:
-              FlatButton(
-                onPressed: () => 
-                  Navigator.pushNamed(context, '/home')
-                ,
-                 child: new Text('LOGIN IN'), 
-              )
-            ),
+          height: 48,
+          child: FlatButton(
+            onPressed: () => Navigator.pushNamed(context, '/home'),
+            child: new Text('LOGIN IN'),
+          )),
     ]));
   }
 }
@@ -37,15 +33,13 @@ class TextFormFieldArea extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           border: Border.all(width: 1.0),
-          borderRadius: BorderRadius.all(Radius.circular(25.0))
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(25.0))),
       width: 400.0,
-      margin: EdgeInsets.only(bottom:20.0) ,
+      height: 48,
+      margin: EdgeInsets.only(bottom: 20.0),
       child: TextFormField(
         decoration: InputDecoration(
-          border: InputBorder.none,
-          prefixIcon: Icon(Icons.person)
-        ),
+            border: InputBorder.none, prefixIcon: Icon(Icons.person)),
       ),
     );
   }
