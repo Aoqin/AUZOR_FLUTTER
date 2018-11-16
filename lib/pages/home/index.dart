@@ -24,12 +24,15 @@ class _HomePageState extends State {
               automaticallyImplyLeading: false,
               actions: <Widget>[
                 new IconButton(
-                    icon: Icon(Icons.directions_car), onPressed: () => {}),
-                new IconButton(icon: Icon(Icons.person), onPressed: () => {})
+                    icon: Icon(Icons.directions_car),
+                    onPressed: () => Navigator.pushNamed(context, '/cars')),
+                new IconButton(
+                    icon: Icon(Icons.person),
+                    onPressed: () => Navigator.pushNamed(context, '/personal'))
               ],
             ),
             SliverFixedExtentList(
-              itemExtent: 180,
+              itemExtent: 160,
               delegate:
                   SliverChildBuilderDelegate((BuildContext context, int index) {
                 return ReceiveCard();

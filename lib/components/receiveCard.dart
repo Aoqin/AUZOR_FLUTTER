@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class ReceiveCard extends StatelessWidget {
   @override
@@ -7,41 +8,49 @@ class ReceiveCard extends StatelessWidget {
         child: Column(
       children: <Widget>[
         Container(
-          height: 48,
-          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+          //card header
+          decoration: BoxDecoration(
+              border:
+                  Border(bottom: BorderSide(width: 1, color: Colors.black12))),
+          padding:
+              EdgeInsets.only(left: 15.0, right: 15.0, top: 8.0, bottom: 8.0),
           child: Row(
             children: <Widget>[
               Expanded(
                   flex: 1,
                   child: Column(children: <Widget>[
+                    Row(children: <Widget>[
+                      Expanded(
+                        child: Container(
+                          alignment: Alignment.centerLeft,
+                          child: Text('川A03522',
+                              style: TextStyle(
+                                  fontSize: 18, color: Colors.black87)),
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(),
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          '2018-12-13 16:00',
+                          style: TextStyle(fontSize: 10, color: Colors.black45),
+                        ),
+                      ),
+                    ]),
                     Container(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        '川A03522',
-                        style: TextStyle(fontSize: 18, color: Colors.black87)
-                      ),
-                    ),
-                    Container(
-                      alignment: Alignment.centerLeft,
-                      child: Text('奔驰2015 时尚魅力版',
+                          '奔驰2015 时尚魅力版奔驰2015 时尚魅力版奔驰2015 时尚魅力版奔驰2015 时尚魅力版',
+                          overflow: TextOverflow.ellipsis,
                           style:
-                              TextStyle(fontSize: 12, color: Colors.black45)),
+                              TextStyle(fontSize: 14, color: Colors.black45)),
                     )
                   ])),
-              Container(
-                decoration: BoxDecoration(),
-                alignment: Alignment.centerRight,
-                child: Text(
-                  '2018-12-13 16:00',
-                  style: TextStyle(fontSize: 10, color: Colors.black45),
-                ),
-              ),
             ],
           ),
         ),
-        Divider(),
         Expanded(
-          flex: 2,
+          // card body
           child: Row(
             children: <Widget>[
               Expanded(
@@ -54,7 +63,7 @@ class ReceiveCard extends StatelessWidget {
               ),
               Container(
                 margin: EdgeInsets.only(left: 5.0, right: 5.0),
-                child: Icon(Icons.trending_flat),
+                child: Icon(Icons.trending_flat,color: Colors.black54),
               ),
               Expanded(
                 flex: 1,
@@ -63,7 +72,7 @@ class ReceiveCard extends StatelessWidget {
               ),
               Container(
                 margin: EdgeInsets.only(left: 5.0, right: 5.0),
-                child: Icon(Icons.trending_flat),
+                child: Icon(Icons.trending_flat,color: Colors.black54),
               ),
               Expanded(
                 flex: 1,
@@ -73,19 +82,6 @@ class ReceiveCard extends StatelessWidget {
             ],
           ),
         ),
-        Container(
-            alignment: Alignment.centerRight,
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: new Container(),
-                ),
-                IconButton(
-                  icon: Icon(Icons.more_horiz, color: Colors.black54),
-                  onPressed: () {},
-                )
-              ],
-            )),
       ],
     ));
   }
@@ -100,37 +96,37 @@ class StatusOperButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
         child: Container(
-      width: 55,
-      height: 48,
-      child: Stack(
-        children: <Widget>[
-          Container(
-            width: 48,
-            height: 48,
-            padding: EdgeInsets.all(0.0),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(24.0)),
-                border: Border.all(width: 1.0, color: Colors.black54)),
-            child: IconButton(
-              icon: Icon(
-                icon,
-                color: Colors.black54,
+            alignment: Alignment.center,
+              child: Stack(
+                overflow: Overflow.visible,
+                children: <Widget>[
+                  Container(
+                    width: 48,
+                    height: 48,
+                    padding: EdgeInsets.all(0.0),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(24.0)),
+                        border: Border.all(width: 1.0, color: Colors.black54)),
+                    child: IconButton(
+                      icon: Icon(
+                        icon,
+                        color: Colors.black54,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Positioned(
+                      bottom: 2,
+                      right: -8,
+                      child: Container(
+                        decoration: BoxDecoration(color: Colors.white),
+                        child: Text(
+                          text,
+                          style: TextStyle(fontSize: 12, color: Colors.black54),
+                        ),
+                      ))
+                ],
               ),
-              onPressed: () {},
-            ),
-          ),
-          Positioned(
-              bottom: 2,
-              right: 0,
-              child: Container(
-                decoration: BoxDecoration(color: Colors.white),
-                child: Text(
-                  text,
-                  style: TextStyle(fontSize: 12, color: Colors.black54),
-                ),
-              ))
-        ],
-      ),
-    ));
+            ));
   }
 }

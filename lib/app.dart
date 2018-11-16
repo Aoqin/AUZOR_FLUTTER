@@ -26,7 +26,17 @@ class _AuzorState extends State<Auzor> {
               leading: Icon(Icons.home),
               title: new Text('Home'),
               onTap: () => Navigator.pushNamed(context, '/home')),
-          new Divider()
+          new Divider(),
+          new ListTile(
+              leading: Icon(Icons.people),
+              title: Text('Personal'),
+              onTap: () => Navigator.pushNamed(context, '/personal')),
+          Divider(),
+          new ListTile(
+              leading: Icon(Icons.directions_car),
+              title: Text('Cars'),
+              onTap: () => Navigator.pushNamed(context, '/cars')),
+          Divider()
         ]),
       ),
     );
