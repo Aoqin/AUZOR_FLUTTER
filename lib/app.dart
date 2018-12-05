@@ -36,6 +36,16 @@ class _AuzorState extends State<Auzor> {
               leading: Icon(Icons.directions_car),
               title: Text('Cars'),
               onTap: () => Navigator.pushNamed(context, '/cars')),
+          Divider(),
+          new ListTile(
+              leading: Icon(Icons.build),
+              title: Text('Receive'),
+              onTap: () => Navigator.pushNamed(context, '/receive')),
+          Divider(),
+          new ListTile(
+              leading: Icon(Icons.cached),
+              title: Text('License plate'),
+              onTap: () => Navigator.pushNamed(context, '/licensePlate')),
           Divider()
         ]),
       ),

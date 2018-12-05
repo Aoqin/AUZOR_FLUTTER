@@ -12,18 +12,30 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(32.0),
-        child: Center(
-          child: Column(
-            children: <Widget>[
-              new Expanded(
-                  child: new Container(
-                      width: 150.0, height: 150.0, child: FlutterLogo())),
-              new Expanded(child: new Center(child: new LoginForm()))
-            ],
-          ),
-        ),
-      ),
+          padding: EdgeInsets.all(32.0),
+          child: SafeArea(
+            child: ListView(
+              children: <Widget>[
+                Container(
+                              width: 150.0,
+                              height: 150.0,
+                              child: FlutterLogo()),
+                LoginForm()
+                // Container(
+                //   child: Column(
+                //     children: <Widget>[
+                //       Expanded(
+                //           child: Container(
+                //               width: 150.0,
+                //               height: 150.0,
+                //               child: FlutterLogo())),
+                //       Expanded(child: Center(child: LoginForm()))
+                //     ],
+                //   ),
+                // ),
+              ],
+            ),
+          )),
     );
   }
 }
