@@ -8,14 +8,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State {
+  final controller = new ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/licensePlate');
+          },
         ),
         body: CustomScrollView(
+          controller: controller,
           slivers: <Widget>[
             SliverAppBar(
               pinned: true,
