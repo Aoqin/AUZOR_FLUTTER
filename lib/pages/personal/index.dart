@@ -10,7 +10,7 @@ class _PersonalPageState extends State<PersonalPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(170),
+        preferredSize: Size.fromHeight(160),
         child: AppBar(
           elevation: 0,
           flexibleSpace: Container(
@@ -36,67 +36,49 @@ class _PersonalPageState extends State<PersonalPage> {
           ),
         ),
       ),
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverFillRemaining(
-              child: Column(
-            children: <Widget>[
-              Container(
-                  padding: EdgeInsets.only(right: 8, top: 10, left: 8),
-                  // decoration: BoxDecoration(color: Colors.white),
-                  alignment: Alignment.centerLeft,
-                  child: Column(children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(bottom: 15),
-                      child: Row(
-                        children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.only(right: 5),
-                            child: Baseline(
-                                baseline: 18,
-                                baselineType: TextBaseline.alphabetic,
-                                child: Text(
-                                  '今日工作',
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      // fontWeight: FontWeight.bold,
-                                      color: Colors.black54,
-                                      textBaseline: TextBaseline.alphabetic),
-                                )),
-                          ),
-                          Baseline(
+      body: ListView(
+        children: <Widget>[
+          Column(children: <Widget>[
+            Container(
+                padding: EdgeInsets.only(right: 8, top: 10, left: 8),
+                // decoration: BoxDecoration(color: Colors.white),
+                alignment: Alignment.centerLeft,
+                child: Column(children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(bottom: 15),
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.only(right: 5),
+                          child: Baseline(
                               baseline: 18,
                               baselineType: TextBaseline.alphabetic,
                               child: Text(
-                                'Today\' workload',
+                                '今日工作',
                                 style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 18,
                                     // fontWeight: FontWeight.bold,
                                     color: Colors.black54,
                                     textBaseline: TextBaseline.alphabetic),
                               )),
-                        ],
-                      ),
+                        )
+                      ],
                     ),
-                    Container(
-                        margin: EdgeInsets.only(bottom: 30),
-                        child: Row(
-                          children: <Widget>[
-                            Expanded(
-                                child: CountCard('接车', 10, double.infinity)),
-                            Expanded(
-                                child: CountCard('接车', 10, double.infinity)),
-                            Expanded(
-                                child: CountCard('接车', 10, double.infinity)),
-                            Expanded(
-                                child: CountCard('接车', 10, double.infinity)),
-                          ],
-                        )),
-                  ])),
-              NavList(),
-              LoginOutBtn()
-            ],
-          ))
+                  ),
+                  Container(
+                      margin: EdgeInsets.only(bottom: 30),
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(child: CountCard('接车', 10, double.infinity)),
+                          Expanded(child: CountCard('录入报告', 10, double.infinity)),
+                          Expanded(child: CountCard('推送报告', 10, double.infinity)),
+                          Expanded(child: CountCard('确认施工', 10, double.infinity)),
+                        ],
+                      )),
+                ])),
+            NavList(),
+            LoginOutBtn()
+          ])
         ],
       ),
     );
@@ -149,7 +131,44 @@ class NavList extends StatelessWidget {
     return Container(
         padding: EdgeInsets.all(10),
         child: Column(
-          children: <Widget>[NavItem(), NavItem(), NavItem()],
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.only(bottom: 10),
+              child: Ink(
+                  color: Colors.white,
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      child: Icon(Icons.airplay),
+                    ),
+                    title: Text('修改密码'),
+                    trailing: Icon(Icons.chevron_right),
+                    onTap: () => {},
+                  )),
+            ),
+            Container(
+                margin: EdgeInsets.only(bottom: 10),
+                child: Ink(
+                    color: Colors.white,
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        child: Icon(Icons.airplay),
+                      ),
+                      title: Text('反馈信息'),
+                      trailing: Icon(Icons.chevron_right),
+                      onTap: () => {},
+                    ))),
+            Container(
+                child: Ink(
+                    color: Colors.white,
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        child: Icon(Icons.airplay),
+                      ),
+                      title: Text('关于车况大师'),
+                      trailing: Icon(Icons.chevron_right),
+                      onTap: () => {},
+                    )))
+          ],
         ));
   }
 }
@@ -167,26 +186,18 @@ class NavItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 10),
-      decoration: BoxDecoration(boxShadow: <BoxShadow>[
-        BoxShadow(
-            blurRadius: 3.0,
-            color: Color.fromRGBO(0, 0, 0, .1),
-            offset: Offset(1, 2))
-      ]),
-      child: FlatButton(
-        padding: EdgeInsets.all(0),
-        color: Colors.white,
-        onPressed: () {},
+        // margin: EdgeInsets.only(bottom: 10),
+        // decoration: BoxDecoration(boxShadow: <BoxShadow>[
+        //   BoxShadow(
+        //       blurRadius: 3.0,
+        //       color: Color.fromRGBO(0, 0, 0, .1),
+        //       offset: Offset(1, 2))
+        // ]),
         child: ListTile(
-          leading: CircleAvatar(child: Icon(Icons.add_alert)),
-          title: Container(
-            child: Text('data'),
-          ),
-          trailing: Icon(Icons.keyboard_arrow_right),
-        ),
-      ),
-    );
+      leading: Icon(Icons.ac_unit),
+      title: Text('车型'),
+      onTap: () => {},
+    ));
   }
 }
 
@@ -194,7 +205,7 @@ class LoginOutBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 24),
+      margin: EdgeInsets.only(top: 24, bottom: 24),
       width: 220,
       height: 48,
       decoration: BoxDecoration(

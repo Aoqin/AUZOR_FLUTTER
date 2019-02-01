@@ -11,7 +11,7 @@ class LoginForm extends StatelessWidget {
           margin: EdgeInsets.only(left: 10, right: 10),
           width: double.infinity - 20,
           decoration: BoxDecoration(
-            border: Border.all(width: 1.0),
+            border: Border.all(width: 1.0, color: Colors.black54),
             borderRadius: BorderRadius.all(Radius.circular(25.0)),
           ),
           height: 48,

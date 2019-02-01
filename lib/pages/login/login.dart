@@ -16,7 +16,10 @@ class _LoginPageState extends State<LoginPage> {
           child: SafeArea(
             child: ListView(
               children: <Widget>[
-                Container(width: 150.0, height: 150.0, child: FlutterLogo()),
+                Container(
+                  child: FlutterLogo(size: 160),
+                  margin: EdgeInsets.only(bottom: 25),
+                ),
                 LoginForm()
                 // Container(
                 //   child: Column(
@@ -31,6 +34,7 @@ class _LoginPageState extends State<LoginPage> {
                 //   ),
                 // ),
               ],
+              semanticChildCount: 1,
             ),
           )),
     );
