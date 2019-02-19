@@ -70,9 +70,12 @@ class _PersonalPageState extends State<PersonalPage> {
                       child: Row(
                         children: <Widget>[
                           Expanded(child: CountCard('接车', 10, double.infinity)),
-                          Expanded(child: CountCard('录入报告', 10, double.infinity)),
-                          Expanded(child: CountCard('推送报告', 10, double.infinity)),
-                          Expanded(child: CountCard('确认施工', 10, double.infinity)),
+                          Expanded(
+                              child: CountCard('录入报告', 10, double.infinity)),
+                          Expanded(
+                              child: CountCard('推送报告', 10, double.infinity)),
+                          Expanded(
+                              child: CountCard('确认施工', 10, double.infinity)),
                         ],
                       )),
                 ])),
@@ -173,34 +176,6 @@ class NavList extends StatelessWidget {
   }
 }
 
-class NavItem extends StatelessWidget {
-  String navItemTitle = '';
-  Icon leading;
-  Function toggle;
-  // NavItem(Map data) {
-  //   this.navItemTitle = data['title'];
-  //   this.leading = data['leading'];
-  //   this.toggle = data['onPressed'];
-  // }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        // margin: EdgeInsets.only(bottom: 10),
-        // decoration: BoxDecoration(boxShadow: <BoxShadow>[
-        //   BoxShadow(
-        //       blurRadius: 3.0,
-        //       color: Color.fromRGBO(0, 0, 0, .1),
-        //       offset: Offset(1, 2))
-        // ]),
-        child: ListTile(
-      leading: Icon(Icons.ac_unit),
-      title: Text('车型'),
-      onTap: () => {},
-    ));
-  }
-}
-
 class LoginOutBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -208,17 +183,10 @@ class LoginOutBtn extends StatelessWidget {
       margin: EdgeInsets.only(top: 24, bottom: 24),
       width: 220,
       height: 48,
-      decoration: BoxDecoration(
-          color: Colors.blue,
-          borderRadius: BorderRadius.all(Radius.circular(24)),
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-                color: Color.fromRGBO(0, 0, 0, .3),
-                spreadRadius: 1.0,
-                blurRadius: 4.0,
-                offset: Offset(1, 3))
-          ]),
-      child: FlatButton(
+      child: RaisedButton(
+        color: Colors.blue,
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
         child: Text(
           'Login out',
           style: TextStyle(color: Colors.white),

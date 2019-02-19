@@ -51,17 +51,10 @@ class _LicensePlatePageState extends State<LicensePlatePage> {
               margin: EdgeInsets.only(top: 50),
               width: 220,
               height: 48,
-              decoration: BoxDecoration(
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                        spreadRadius: 1.0,
-                        blurRadius: 5.0,
-                        offset: Offset(2, 3),
-                        color: Color.fromRGBO(0, 0, 0, .3))
-                  ],
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.all(Radius.circular(24))),
-              child: FlatButton(
+              child:RaisedButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24.0)),
+                color: Colors.blue,
                 child: Text('确认', style: TextStyle(color: Colors.white)),
                 onPressed: () {},
               ),

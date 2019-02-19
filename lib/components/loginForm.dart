@@ -4,24 +4,29 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
+        autovalidate: true,
         child: new Column(children: <Widget>[
-      AccountInput(),
-      PasswordInput(),
-      Container(
-          margin: EdgeInsets.only(left: 10, right: 10),
-          width: double.infinity - 20,
-          decoration: BoxDecoration(
-            border: Border.all(width: 1.0, color: Colors.black54),
-            borderRadius: BorderRadius.all(Radius.circular(25.0)),
-          ),
-          height: 48,
-          child: FlatButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/home');
-            },
-            child: new Text('LOGIN IN'),
-          )),
-    ]));
+          AccountInput(),
+          PasswordInput(),
+          Container(
+              margin: EdgeInsets.only(left: 10, right: 10),
+              width: double.infinity - 20,
+              decoration: BoxDecoration(
+                // border: Border.all(width: 1.0, color: Colors.black54),
+                borderRadius: BorderRadius.all(Radius.circular(25.0)),
+              ),
+              height: 48,
+              child: RaisedButton(
+                color: Colors.blue,
+                shape: RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(25.0)),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/home');
+                },
+                child:
+                    new Text('LOGIN IN', style: TextStyle(color: Colors.white)),
+              )),
+        ]));
   }
 }
 
