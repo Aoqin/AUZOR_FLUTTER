@@ -7,6 +7,7 @@ import 'package:auzor/pages/personal/index.dart';
 import 'package:auzor/pages/cars/index.dart';
 import 'package:auzor/pages/receive/index.dart';
 import 'package:auzor/pages/licensePlate/index.dart';
+import 'package:auzor/pages/workData/index.dart';
 
 void main() => runApp(MaterialApp(
       home: Auzor(),
@@ -16,6 +17,7 @@ void main() => runApp(MaterialApp(
         '/personal': (context) => PersonalPage(),
         '/cars': (context) => CarsPage(),
         '/receive': (context) => ReceivePage(),
-        '/licensePlate': (context) => LicensePlatePage()
+        '/licensePlate': (context) => LicensePlatePage(),
+        '/workData': (context) => WorkData()
       },
     ));

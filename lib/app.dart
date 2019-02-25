@@ -46,7 +46,11 @@ class _AuzorState extends State<Auzor> {
               leading: Icon(Icons.cached),
               title: Text('License plate'),
               onTap: () => Navigator.pushNamed(context, '/licensePlate')),
-          Divider()
+          Divider(),
+          new ListTile(
+              leading: Icon(Icons.show_chart),
+              title: Text('Work Data'),
+              onTap: () => Navigator.pushNamed(context, '/workData')),
         ]),
       ),
     );

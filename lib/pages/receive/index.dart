@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class ReceivePage extends StatefulWidget {
   @override
@@ -20,17 +21,12 @@ class _ReceivePageState extends State<ReceivePage> {
           ],
         ),
         // preferredSize: Size.fromHeight(130),
-        body: ListView(
-          children: <Widget>[
-            Container(
-              width: double.infinity,
-              height: 200,
-              color: Colors.blue,
-           ),
-            ListTile(
-              title: Text('123'),
-            ),
-          ],
+        body: new ListView.builder(
+          itemBuilder: (BuildContext context, int index) {
+            return Text('entery $index');
+          },
+          itemCount: 20,
+          itemExtent: 20,
         ));
   }
 }
