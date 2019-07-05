@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class Auzor extends StatefulWidget {
   @override
   _AuzorState createState() => _AuzorState();
@@ -25,7 +26,12 @@ class _AuzorState extends State<Auzor> {
           new ListTile(
               leading: Icon(Icons.people),
               title: new Text('home'),
-              onTap: () => Navigator.pushNamed(context, '/home'))
+              onTap: () => Navigator.pushNamed(context, '/home')),
+          Divider(),
+          new ListTile(
+              leading: Icon(Icons.people),
+              title: new Text('saibeier'),
+              onTap: () => Navigator.pushNamed(context, '/saibeier'))
         ]),
       ),
     );

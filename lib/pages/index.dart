@@ -7,7 +7,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var _pageviewController = new PageController();
+  PageController _pageController;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _pageController = new PageController();
+  }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +48,7 @@ class _HomePageState extends State<HomePage> {
         ),
         body: Container(
           child: PageView(
-            controller: _pageviewController,
+            controller: _pageController,
             children: <Widget>[
               Container(
                 child: Center(
@@ -67,6 +78,15 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {},
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        //BottomNavigationBar
+        /*
+      bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(icon: Icon(Icons.ac_unit),title: Text('cloumn')),
+        BottomNavigationBarItem(icon: Icon(Icons.ac_unit),title: Text('cloumn'))
+      ]),
+      */
+        // BottomAppBar
+
         bottomNavigationBar: BottomAppBar(
           shape: CircularNotchedRectangle(),
           child: Row(
@@ -80,12 +100,12 @@ class _HomePageState extends State<HomePage> {
                     IconButton(
                       onPressed: () {
                         setState(() {
-                          _pageviewController.jumpToPage(0);
+                          _pageController.jumpToPage(0);
                         });
                       },
                       icon: Icon(
                         Icons.school,
-                        color: _pageviewController.page == 0
+                        color: _pageController.page == 0
                             ? Colors.blue
                             : Colors.black38,
                       ),
@@ -93,12 +113,12 @@ class _HomePageState extends State<HomePage> {
                     IconButton(
                       onPressed: () {
                         setState(() {
-                          _pageviewController.jumpToPage(1);
+                          _pageController.jumpToPage(1);
                         });
                       },
                       icon: Icon(
                         Icons.school,
-                        color: _pageviewController.page == 1
+                        color: _pageController.page == 1
                             ? Colors.blue
                             : Colors.black38,
                       ),
@@ -116,12 +136,12 @@ class _HomePageState extends State<HomePage> {
                     IconButton(
                       onPressed: () {
                         setState(() {
-                          _pageviewController.jumpToPage(2);
+                          _pageController.jumpToPage(2);
                         });
                       },
                       icon: Icon(
                         Icons.school,
-                        color: _pageviewController.page == 2
+                        color: _pageController.page == 2
                             ? Colors.blue
                             : Colors.black38,
                       ),
@@ -129,12 +149,12 @@ class _HomePageState extends State<HomePage> {
                     IconButton(
                       onPressed: () {
                         setState(() {
-                          _pageviewController.jumpToPage(3);
+                          _pageController.jumpToPage(3);
                         });
                       },
                       icon: Icon(
                         Icons.school,
-                        color: _pageviewController.page == 3
+                        color: _pageController.page == 3
                             ? Colors.blue
                             : Colors.black38,
                       ),

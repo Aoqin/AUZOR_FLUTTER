@@ -35,6 +35,7 @@
    * FloatingActionButton
    * OutlineButton
    * PopupMenuButton
+   * Ink
 
 4. 文本
    * Text
@@ -58,6 +59,10 @@
    * Alertdialog
    * Drawer
    * BottomSheet
+  
+8. 裁剪
+   * Clip
+   * ClipPath
 
 ### Flutter 常用插件
 
